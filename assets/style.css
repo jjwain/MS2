@@ -1,7 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Raleway:wght@300&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    font-family: "raleway";
+}
+
+#menu {
+    position: absolute;
+    z-index: 1;
+    font-size: 110%;
+    list-style-type: none;
+    height: 70px;
+    width:100%;
+    background-color: rgba(0,0,0,0.1);
+}
+
+#menu ul {
+    width: 100%;
+}
+
+.menu-li {
+    display: inline;
+    width: 50%;
+    text-align: center;
+    float: left;
+    margin-top: 25px;
+}
+
+.menu-li a {
+    text-decoration: none;
+    font-family: "raleway";
+    font-weight: bold;
+}
+
+#img-container {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+#front-image {
+    font-family: "Montserrat Subrayada";
+    height: 700px;
+    width: 100%;
+    margin: auto;
+    background-image: url(Europe-Background.jpg);
+    margin-bottom: 100px;
+    top: 0;
+    position: absolute;
+}
+
+#front-image h1 {
+    text-align: center;
+    width: 100%;
+    top: 200px;
+    position: absolute;
+    margin: auto;
+    color: rgba(0,0,0,0.5);
+}
+
+.map-container {
+    margin-top: 300px;
+    height: 1000px;
+}
+
 #map {
     height: 650px;
     width: 80%;
     margin: auto;
+    bottom: 0;
 }
-
-
