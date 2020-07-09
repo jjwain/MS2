@@ -42,8 +42,8 @@
 
 /* Heading Styling */
 
-.container {
-    width: 100vw;
+#header-container {
+    padding: 0;
 }
 
 #img-container {
@@ -76,7 +76,8 @@
     width: 100%;
     position: absolute;
     margin: auto;
-    color: rgba(0,0,0,0.5);
+    font-size: 60px;
+    color: rgba(0,51,102, 0.9);
 }
 
 .map-container {
@@ -93,3 +94,14 @@
 
 /* Travel destination styling  */
 
+#location-section {
+    width: 100%;
+    height: 800px;
+    margin-bottom: 500px;
+}
+
+.location {
+    height: 200px;
+    background-color: black;
+    margin-top: 8px;
+}
