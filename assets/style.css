@@ -108,7 +108,7 @@
 }
 
 .location-row {
-    margin-top: 15px;
+    margin-top: 50px;
 }
 
 
@@ -127,13 +127,40 @@
     height: 175px;
     width: 100%;
     margin-top: 2px;
-    background-color: rgba(0,0,0,0.5);
+    /* background-color: rgba(0,0,0,0.5); */
     border: 2px solid rgba(0,51,102,1);
     border-radius: 8px;
 }
 
 
-/* Image links */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             /* Image links */
+
 
 .london {
     background-image: url(/assets/img/london.jpg);
