@@ -127,13 +127,15 @@
 .map-header {
     font-family: "Montserrat Subrayada";
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
     color: rgba(0,51,102, 0.9);
 }
 
 .map-sub-header {
     font-family: raleway;
     text-align: center;
+    color: rgba(0,51,102,1);
+    font-weight: bold;
 }
 
 
@@ -149,7 +151,21 @@
 
 
 
+footer {
+    height: 135px;
+}
 
+#network-links {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#network-links li {
+    display: inline;
+    font-size: 50px;
+    padding: 10px;
+    color: rgba(0,51,102,1);
+}
 
 
 
@@ -186,19 +202,9 @@
     background-position: center center;
 }
 
-.bath {
-    background-image: url(/assets/img/bath.jpg);
-    background-position: 55% 50%;
-}
-
 .edinburgh {
     background-image: url(/assets/img/edinburgh.jpg);
     background-position: 50% 30%;
-}
-
-.cork {
-    background-image: url(/assets/img/cork.jpg);
-    background-position: 70% 45%;
 }
 
 .saint-malo {
@@ -206,53 +212,13 @@
     background-position: 20% 15%;
 }
 
-.seville {
-    background-image: url(/assets/img/seville.jpg);
-    background-position: 10% 30%;
-}
-
-.rijeka {
-    background-image: url(/assets/img/rijeka.jpg);
-    background-position:40% 78%;
-}
-
-.cascais {
-    background-image: url(/assets/img/cascais.jpg);
-    background-position:60% 45%; 
-}
-
-.bruges {
-    background-image: url(/assets/img/bruges.jpg);
-    background-position:50% 30% ;
-}
-
-.budapest {
-    background-image: url(/assets/img/budapest.jpg);
-    background-position:50% 50% ;
-}
-
 .rome {
     background-image: url(/assets/img/rome.jpg);
     background-position:50% 50% ;
 }
 
-.venice {
-    background-image: url(/assets/img/venice.jpg);
-    background-position:50% 50% ;
-}
-
-.vienna {
-    background-image: url(/assets/img/vienna.jpg);
-    background-position:50% 50% ;
-}
-
 .verona {
     background-image: url(/assets/img/verona.jpg);
-    background-position:50% 50% ;
-}
-
-.florence {
-    background-image: url(/assets/img/florence.jpg);
     background-position:50% 50% ;
 }
 
