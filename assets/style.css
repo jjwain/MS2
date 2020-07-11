@@ -155,12 +155,12 @@ footer {
     height: 135px;
 }
 
-#network-links {
+.network-links {
     text-align: center;
     margin-top: 50px;
 }
 
-#network-links li {
+.network-links li {
     display: inline;
     font-size: 50px;
     padding: 10px;
