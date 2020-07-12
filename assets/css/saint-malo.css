@@ -59,10 +59,10 @@
     height: 700px;
     width: 100%;
     background: linear-gradient(to bottom, transparent, white),
-      url(/assets/img/london-background.jpg);
+      url(/assets/img/saint-malo-background.jpg);
     overflow: hidden;
     background-repeat: no-repeat;
-    background-size: inherit;
+    background-size: cover;
 }
 
 #image-text {
@@ -87,13 +87,31 @@
 
 .location-info{
     border: solid 2px black;
-    height: 400px;
+    height: 275px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.location-info h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.location-info ul {
+    list-style-type: none;
+}
+
+.location-info li {
+    margin-top: 15px;
 }
 
 .location-s-map {
     border: solid 2px black;
     height: 400px;
     margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
 }
 
 #map {
