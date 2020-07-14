@@ -100,16 +100,21 @@
 
 .location-info ul {
     list-style-type: none;
+    text-align: center;
 }
 
 .location-info li {
     margin-top: 15px;
 }
 
+.map-info-container {
+    margin-top: -120px;
+}
+
 .location-s-map {
     border: solid 2px black;
     height: 400px;
-    margin-left: 10px;
+    margin: auto;
     border-radius: 5px;
     box-shadow: 2px 2px 2px black;
 }

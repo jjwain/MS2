@@ -34,7 +34,7 @@
     text-decoration: none;
     font-family: "raleway";
     font-weight: bold;
-    color: rgba(0,51,102, 0.9);
+    color: white;
 }
 
 .menu-li a:hover {
@@ -59,10 +59,10 @@
     height: 700px;
     width: 100%;
     background: linear-gradient(to bottom, transparent, white),
-      url(/assets/img/london-background.jpg);
+      url(/assets/img/rome-background.jpg);
     overflow: hidden;
     background-repeat: no-repeat;
-    background-size: inherit;
+    background-size: cover;
 }
 
 #image-text {

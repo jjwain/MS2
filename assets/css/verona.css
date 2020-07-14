@@ -59,7 +59,7 @@
     height: 700px;
     width: 100%;
     background: linear-gradient(to bottom, transparent, white),
-      url(/assets/img/london-background.jpg);
+      url(/assets/img/verona-background.jpg);
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: inherit;
@@ -92,6 +92,7 @@
     border-radius: 5px;
     box-shadow: 2px 2px 2px black;
 }
+
 .map-info-container {
     margin-top: -120px;
 }
