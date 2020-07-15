@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <script src="/assets/scripts/maps.js"></script>
+    <title>European Travel Guide</title>
+</head>
+
+<body>
+    <section>
+        <nav id="menu">
+            <ul>
+                <li class="menu-li">
+                    <a href="index.html">HOME PAGE</a>
+                </li>
+                <li class="menu-li">
+                    <a href="#">SIGN UP</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+
+    <!-- front image and title  -->
+    <article class="container-fluid" id="header-container">
+        <section id="img-container">
+            <div id="front-image">
+                <div id="image-text">
+                    <h1 class="lead">European Travel Guide</h1>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <article class="container-fluid">
+        <div class="center-form">
+            <form onsubmit="return sendMail(this);">
+            <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+            <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+            <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+            <button type="submit" class="btn btn-secondary center-block">Send Project Request</button>
+            </form>
+        </div>
+    </article>
+</body>
+
+</html>
