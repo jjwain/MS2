@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/form-page.css" type="text/css" />
+    <script src="/assets/scripts/maps.js"></script>
+    <title>European Travel Guide/Contact US</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_BfzfX2WvKAntS03XvyYYc");
+   })();
+</script>
+</head>
+
+<body>
+    <section>
+        <nav id="menu">
+            <ul>
+                <li class="menu-li">
+                    <a href="/index.html">HOME PAGE</a>
+                </li>
+                <li class="menu-li">
+                    <a href="form-page.html">CONTACT PAGE</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+
+    <!-- front image and title  -->
+    <article class="container-fluid" id="header-container">
+        <section id="img-container">
+            <div id="front-image">
+                <div id="image-text">
+                    <h1 class="lead">Website & location enquiries</h1>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <article class="container-fluid form-container">
+        <div class="center-form">
+            <form onsubmit="return sendMail(this);" method="POST">
+            <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+            <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+            <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write your review here!" required></textarea>
+            <button type="submit" class="btn btn-secondary center-block">Send Review</button>
+            </form>
+        </div>
+    </article>
+    <footer>
+        <ul class="network-links">
+            <li>
+                <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            </li>
+        </ul>
+    </footer>
+    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+    <script src="/assets/scripts/send-email.js"></script>
+</body>
+</html>
