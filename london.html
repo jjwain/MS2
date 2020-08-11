@@ -3,77 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/london.css" type="text/css" />
-    <script src="/assets/scripts/london-map.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+          <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin=""></script>
     <title>European Travel Guide/London</title>
+    <link rel="stylesheet" href="assets/css/london.css">
+​
 </head>
 <body>
-    <section>
-        <nav id="menu">
-            <ul>
-                <li class="menu-li">
-                    <a href="index.html">HOME PAGE</a>
-                </li>
-                <li class="menu-li">
-                    <a href="form-page.html">CONTACT US</a>
-                </li>
-            </ul>
-        </nav>
-    </section>
-
-
-     <!-- front image and title  -->
-    <article class="container-fluid" id="header-container"> 
+<section>
+    <nav id="menu">
+        <ul>
+            <li class="menu-li">
+                <a href="index.html">HOME PAGE</a>
+            </li>
+            <li class="menu-li">
+                <a href="form-page.html">CONTACT US</a>
+            </li>
+        </ul>
+    </nav>
+</section>
+​
+​
+<!-- front image and title  -->
+<article class="container-fluid" id="header-container">
     <section id="img-container">
-    <div id="front-image">
-        <div id="image-text">
-            <h1 class="lead">London</h1>
+        <div id="front-image">
+            <div id="image-text">
+                <h1 class="lead">London</h1>
+            </div>
         </div>
-    </div>
     </section>
-
+​
     <section>
         <div class="container map-info-container">
             <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.stpauls.co.uk/" target="_blank" id="lon-1">St. Pauls Cathedral</a></li>
-                    <li><a href="https://www.hrp.org.uk/tower-of-london/#gs.c0f2et" target="_blank" id="lon-2">Tower of London</a></li>
-                    <li><a href="https://www.britishmuseum.org/" target="_blank" id="lon-3">The British Museum</a></li>
-                    <li><a href="https://www.londoneye.com/" target="_blank" id="lon-4">The London Eye</a></li>
-                    <li><a href="https://www.royal.uk/royal-residences-buckingham-palace" target="_blank" id="lon-5">Buckingham Palace</a></li>                   
-                </ul>
-            </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div>
+                <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                    <h2>Top 5 Tourist Locations</h2>
+                    <ul>
+                        <li><a id="lon-1" onclick="stpauls()">St. Paul's Cathedral</a></li>
+                        <li><a id="lon-2" onclick="tower()">Tower of London</a></li>
+                        <li><a href="https://www.britishmuseum.org/" target="_blank" id="lon-3">The British Museum</a>
+                        </li>
+                        <li><a href="https://www.londoneye.com/" target="_blank" id="lon-4">The London Eye</a></li>
+                        <li><a href="https://www.royal.uk/royal-residences-buckingham-palace" target="_blank"
+                               id="lon-5">Buckingham Palace</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-lg-6 location-s-map">
+                    <div id="mapid"></div>
+                </div>
             </div>
         </div>
-        </div>
-
-
+​
+​
     </section>
-    </article>
-    <script	src="https://code.jquery.com/jquery-3.2.1.js"integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
+</article>
+<script>
+​
+​
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+​
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1Ijoiam9yZGFud2FpbjEiLCJhIjoiY2tkY3lobDc5MHBwbjJ5bmJyYWR3a2VvcSJ9.gt1r8G74bhLfpFETiG1bIQ'
+    }).addTo(mymap);
+​
+    L.circle([51.515126, -0.098491], 100, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+​
+    var popup = L.popup();
+​
+​
+    function stpauls() {
+        L.marker([51.515126, -0.098491]).addTo(mymap)
+            .bindPopup("<a href='www.google.com'>St Paul's Cathedral.</a>")
+            .openPopup();
+    }
+​
+    function tower() {
+        L.marker([51.507921, -0.076239]).addTo(mymap)
+            .bindPopup("<a href='www.google.com'>Tower of London.</a>")
+            .openPopup();
+    }
+​
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
 
-    </body>
-    <footer>
-        <ul class="network-links">
-            <li>
-                <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-                <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            </li>
-        </ul>
-    </footer>
-    </html>
+​
+</body> 
+<footer>
+    <ul class="network-links">
+        <li>
+            <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+            <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        </li>
+    </ul>
+</footer>

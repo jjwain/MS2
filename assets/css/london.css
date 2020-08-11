@@ -123,13 +123,15 @@
     border-top: solid 2px rgba(0,51,102, 0.9);
     border-bottom: solid 2px rgba(0,51,102, 0.9);
     height: 400px;
+    width: 400px;
     margin: auto;
     border-radius: 5px;
 }
 
-#map {
-    height: 100%;
-    width: 100%;
+
+#mapid {
+    height: 400px;
+    width: 400px;
     padding: 0;
 }
 
