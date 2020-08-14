@@ -35,33 +35,87 @@
     </article>
 
     <article>
-    <section>
-        <div class="container map-info-container">
-            <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.coopculture.it/en/colosseo-e-shop.cfm" target="_blank">Colosseum</a></li>
-                    <li><a href="https://www.rome.net/pantheon" target="_blank">Pantheon</a></li>
-                    <li><a href="https://www.rometoolkit.com/whattodo/roman_forum.html" target="_blank">Roman Forum</a></li>
-                    <li><a href="https://www.rome.net/trevi-fountain" target="_blank">Trevi Fountain</a></li>
-                    <li><a href="https://www.rome.net/st-peters-basilica" target="_blank">St. Peter's Basilica</a></li>
-                    
-                </ul>
-                
+        <section>
+            <div class="container map-info-container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                        <h2>Top 5 Tourist Locations</h2>
+                        <ul>
+                            <li><a id="lon-1" onclick="colosseum()">Colosseum</a></li>
+                            <li><a id="lon-2" onclick="pantheon()">Pantheon</a></li>
+                            <li><a id="lon-3" onclick="romanForum()">Roman Forum</a></li>
+                            <li><a id="lon-4" onclick="treviFountain()">Trevi Fountain</a></li>
+                            <li><a id="lon-5" onclick="basilica()">St. Peter's Basilica</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 location-s-map">
+                        <div id="mapid"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
-            </div>
-        </div>
-        </div>
-
-
-    </section>
+    ​
+    ​
+        </section>
     </article>
+    <script>
+    ​
+    ​
+        var mymap = L.map('mapid').setView([41.9028, 12.4964], 13);
+    ​
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);
+    ​
+        // L.circle([51.515126, -0.098491], 100, {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5
+        // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+    ​
+        var popup = L.popup();
+    ​
+    ​
+        function colosseum() {
+            L.marker([41.8902, 12.4922]).addTo(mymap)
+                .bindPopup("https://www.coopculture.it/en/colosseo-e-shop.cfm'>Colosseum.</a>")
+                .openPopup();
+        }
+    ​
+        function pantheon() {
+            L.marker([41.8986, 12.4769]).addTo(mymap)
+                .bindPopup("<a href='https://www.rome.net/pantheon'>Pantheon.</a>")
+                .openPopup();
+        }
+    
+        function romanForum() {
+            L.marker([41.8925, 12.4853]).addTo(mymap)
+                .bindPopup("<a href='https://www.rometoolkit.com/whattodo/roman_forum.html'>Roman Forum.</a>")
+                .openPopup();
+        }
+    
+        function treviFountain() {
+            L.marker([41.9009, 12.4833]).addTo(mymap)
+                .bindPopup("<a href='https://www.rome.net/trevi-fountain'>Trevi Fountain.</a>")
+                .openPopup();
+        }
+    
+        function basilica() {
+            L.marker([41.9022, 12.4539]).addTo(mymap)
+                .bindPopup("<a href='https://www.rome.net/st-peters-basilica'>St. Peter's Basilica.</a>")
+                .openPopup();
+        }
+    ​
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
-
+    ​
     </body>
     <footer>
         <ul class="network-links">

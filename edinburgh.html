@@ -36,30 +36,87 @@
     <section>
         <div class="container map-info-container">
             <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.viator.com/Edinburgh-tourism/d739-r15694791731-s197688251?mcid=28353&tsem=true&supci=-1275310320&supag=15694791731&supsc=aud-887267637060:kwd-300702987108&supai=269943182043&supap=&supdv=c&supnt=g&supti=aud-887267637060:kwd-300702987108&suplp=1006663&supli=&m=28353&supag=15694791731&supsc=aud-887267637060:kwd-300702987108&supai=269943182043&supap=&supdv=c&supnt=nt:g&suplp=1006663&supli=&supti=aud-887267637060:kwd-300702987108&tsem=true&supci=aud-887267637060:kwd-300702987108&supap1=&supap2=&gclid=Cj0KCQjwvIT5BRCqARIsAAwwD-QZN_2yoGDY3v_jiZ7EBAsa2TFeWp_8hMUx2PQczaMMh22l26L0qyQaArKwEALw_wcB" target="_blank">Edinburgh Castle</a></li>
-                    <li><a href="https://theculturetrip.com/europe/united-kingdom/scotland/articles/the-top-10-things-to-see-do-in-old-town-edinburgh/" target="_blank">Edinburgh Old Town</a></li>
-                    <li><a href="https://stgilescathedral.org.uk/" target="_blank">St Giles' Cathedral</a></li>
-                    <li><a href="https://www.visitscotland.com/info/see-do/holyrood-park-and-arthurs-seat-p914341" target="_blank">Arthur's Seat</a></li>
-                    <li><a href="https://www.edinburghmuseums.org.uk/venue/scott-monument" target="_blank">Scott Monument</a></li>
-                    
-                </ul>
-                
-            </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
+                <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                    <h2>Top 5 Tourist Locations</h2>
+                    <ul>
+                        <li><a id="lon-1" onclick="edinburghCastle()">Edinburgh Castle</a></li>
+                        <li><a id="lon-2" onclick="oldTown()">Edinburgh Old Town</a></li>
+                        <li><a id="lon-3" onclick="gilesCathedral()">St Giles' Cathedral</a></li>
+                        <li><a id="lon-4" onclick="arthurSeat()">Arthur's Seat</a></li>
+                        <li><a id="lon-5" onclick="scottMonument()">Scott Monument</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-lg-6 location-s-map">
+                    <div id="mapid"></div>
+                </div>
             </div>
         </div>
-
-
+​
+​
     </section>
-    </article>
-    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
+</article>
+<script>
+​
+​
+    var mymap = L.map('mapid').setView([55.9533, -3.1883], 13);
+​
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+​
+    // L.circle([51.515126, -0.098491], 100, {
+    //     color: 'red',
+    //     fillColor: '#f03',
+    //     fillOpacity: 0.5
+    // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+​
+    var popup = L.popup();
+​
+​
+    function edinburghCastle() {
+        L.marker([55.9486, -3.1999]).addTo(mymap)
+            .bindPopup("<a href='https://www.edinburghcastle.scot/'>Edinburgh Castle.</a>")
+            .openPopup();
+    }
+​
+    function oldTown() {
+        L.marker([55.9490, -3.1899]).addTo(mymap)
+            .bindPopup("<a href='https://theculturetrip.com/europe/united-kingdom/scotland/articles/the-top-10-things-to-see-do-in-old-town-edinburgh/'>Edinburgh Old Town.</a>")
+            .openPopup();
+    }
 
-    </body>
+    function gilesCathedral() {
+        L.marker([55.9495, -3.1909]).addTo(mymap)
+            .bindPopup("<a href='https://stgilescathedral.org.uk/'>St. Giles Cathedral.</a>")
+            .openPopup();
+    }
+
+    function arthurSeat() {
+        L.marker([55.9441, -3.1618]).addTo(mymap)
+            .bindPopup("<a href='https://www.visitscotland.com/info/see-do/holyrood-park-and-arthurs-seat-p914341'>Arthur's Seat.</a>")
+            .openPopup();
+    }
+
+    function scottMonument() {
+        L.marker([55.9524, -3.1933]).addTo(mymap)
+            .bindPopup("<a href='https://www.edinburghmuseums.org.uk/venue/scott-monument'>Scott's Monument.</a>")
+            .openPopup();
+    }
+​
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        
+<script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+
+</body>
     <footer>
         <ul class="network-links">
             <li>

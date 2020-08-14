@@ -24,42 +24,96 @@
 
 
      <!-- front image and title  -->
-    <article class="container-fluid" id="header-container"> 
-    <section id="img-container">
-    <div id="front-image">
-        <div id="image-text">
-            <h1 class="lead">Rovinj</h1>
-        </div>
-    </div>
-    </section>
-
-    <section>
-        <div class="container map-info-container">
-            <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.adris.hr/odnosi-s-javnoscu/galerija-adris/o-galeriji/" target="_blank">Galerija Adris</a></li>
-                    <li><a href="https://www.inforovinj.com/eng/rovinj/znamenje/crkva-sv-eufemija.asp" target="_blank">Church of St. Euphemia</a></li>
-                    <li><a href="http://www.rovinj.co/en/meet-rovinj/nature/" target="_blank">Park forest Zlatni Rt</a></li>
-                    <li><a href="http://www.rovinj.co/en/meet-rovinj/beaches/cuvi/" target="_blank">Cuvi Beach</a></li>
-                    <li><a href="https://www.rovinj-tourism.com/en/discover/art-and-culture/cultural-and-historical-sights/488" target="_blank">Balbi's Arch</a></li>
-                    
-                </ul>
-                
+     <article class="container-fluid" id="header-container">
+        <section id="img-container">
+            <div id="front-image">
+                <div id="image-text">
+                    <h1 class="lead">London</h1>
+                </div>
             </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
+        </section>
+    ​
+        <section>
+            <div class="container map-info-container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                        <h2>Top 5 Tourist Locations</h2>
+                        <ul>
+                            <li><a onclick="adris()">Galerija Adris</a></li>
+                            <li><a onclick="euphemia()">Church of St. Euphemia</a></li>
+                            <li><a onclick="forestZlatni()">Park forest Zlatni Rt</a></li>
+                            <li><a onclick="cuviBeach()">Cuvi Beach</a></li>
+                            <li><a onclick="balbiArch()">Balbi's Arch</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 location-s-map">
+                        <div id="mapid"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-
-
-    </section>
+    ​
+    ​
+        </section>
     </article>
+    <script>
+    ​
+    ​
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    ​
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);
+    ​
+        // L.circle([51.515126, -0.098491], 100, {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5
+        // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+    ​
+        var popup = L.popup();
+    ​
+    ​
+        function adris() {
+            L.marker([45.0787, 13.6389]).addTo(mymap)
+                .bindPopup("<a href='https://www.adris.hr/odnosi-s-javnoscu/galerija-adris/o-galeriji/'>Galerija Adris.</a>")
+                .openPopup();
+        }
+    ​
+        function euphemia() {
+            L.marker([45.0832, 13.6311]).addTo(mymap)
+                .bindPopup("<a href='https://www.inforovinj.com/eng/rovinj/znamenje/crkva-sv-eufemija.asp'>Church of St. Euphemia.</a>")
+                .openPopup();
+        }
+    
+        function forestZlatni() {
+            L.marker([45.0671, 13.6366]).addTo(mymap)
+                .bindPopup("<a href='http://www.rovinj.co/en/meet-rovinj/nature/'>Park forest Zlatni Rt.</a>")
+                .openPopup();
+        }
+    
+        function cuviBeach() {
+            L.marker([45.0662, 13.6520]).addTo(mymap)
+                .bindPopup("<a href='http://www.rovinj.co/en/meet-rovinj/beaches/cuvi/'>Cuvi Beach.</a>")
+                .openPopup();
+        }
+    
+        function balbiArch() {
+            L.marker([45.0822, 13.6343]).addTo(mymap)
+                .bindPopup("<a href='https://www.rovinj-tourism.com/en/discover/art-and-culture/cultural-and-historical-sights/488'>Balbi's Arch.</a>")
+                .openPopup();
+        }
+    ​
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
-
+    ​
     </body>
     <footer>
         <ul class="network-links">
@@ -78,3 +132,4 @@
         </ul>
     </footer>
     </html>
+    

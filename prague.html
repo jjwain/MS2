@@ -36,45 +36,99 @@
     <section>
         <div class="container map-info-container">
             <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.hrad.cz/en/prague-castle-for-visitors" target="_blank">Prague Castle</a></li>
-                    <li><a href="http://www.myczechrepublic.com/prague/sightseeing/charles_bridge.html" target="_blank">Charles Bridge</a></li>
-                    <li><a href="https://www.hrad.cz/en/prague-castle-for-visitors/objects-for-visitors/st.-vitus-cathedral-10330" target="_blank">St. Vitus Cathedral</a></li>
-                    <li><a href="https://www.prague.eu/en/object/places/182/wenceslas-square-vaclavske-namesti" target="_blank">Wenceslas Square</a></li>
-                    <li><a href="https://www.dancinghousehotel.com/en/" target="_blank">Dancing House</a></li>
-                    
-                </ul>
-                
-            </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
+                <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                    <h2>Top 5 Tourist Locations</h2>
+                    <ul>
+                        <li><a id="lon-1" onclick="pragueCastle()">Prague Castle</a></li>
+                        <li><a id="lon-2" onclick="charlesBridge()">Charles Bridge</a></li>
+                        <li><a id="lon-3" onclick="vitusCathedral()">St. Vitus Cathedral</a></li>
+                        <li><a id="lon-4" onclick="wenSquare()">Wenceslas Square</a></li>
+                        <li><a id="lon-5" onclick="dancingHouse()">Dancing House</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-lg-6 location-s-map">
+                    <div id="mapid"></div>
+                </div>
             </div>
         </div>
-        </div>
-
-
+​
+​
     </section>
-    </article>
-    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
+</article>
+<script>
+​
+​
+    var mymap = L.map('mapid').setView([50.0755, 14.4378], 13);
+​
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+​
+    // L.circle([51.515126, -0.098491], 100, {
+    //     color: 'red',
+    //     fillColor: '#f03',
+    //     fillOpacity: 0.5
+    // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+​
+    var popup = L.popup();
+​
+​
+    function pragueCastle() {
+        L.marker([51.515126, -0.098491]).addTo(mymap)
+            .bindPopup("<a href='www.google.com'>Prague Castle.</a>")
+            .openPopup();
+    }
+​
+    function charlesBridge() {
+        L.marker([51.507921, -0.076239]).addTo(mymap)
+            .bindPopup("<a href='www.google.com'>Charles Bridge.</a>")
+            .openPopup();
+    }
 
-    </body>
-    <footer>
-        <ul class="network-links">
-            <li>
-                <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-                <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            </li>
-        </ul>
-    </footer>
-    </html>
+    function vitusCathedral() {
+        L.marker([51.5194, -0.1270]).addTo(mymap)
+            .bindPopup("<a href='https://www.britishmuseum.org/'>St. Vitus Cathedral.</a>")
+            .openPopup();
+    }
+
+    function wenSquare() {
+        L.marker([51.5033, -0.1195]).addTo(mymap)
+            .bindPopup("<a href='https://www.londoneye.com/'>Wenceslas Square.</a>")
+            .openPopup();
+    }
+
+    function dancingHouse() {
+        L.marker([51.5014, -0.1419]).addTo(mymap)
+            .bindPopup("<a href='https://www.royal.uk/royal-residences-buckingham-palace'>Dancing House.</a>")
+            .openPopup();
+    }
+​
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+​
+</body>
+<footer>
+    <ul class="network-links">
+        <li>
+            <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+            <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        </li>
+    </ul>
+</footer>
+</html>

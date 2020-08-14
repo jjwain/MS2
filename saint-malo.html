@@ -36,46 +36,99 @@
     <section>
         <div class="container map-info-container">
             <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.tripadvisor.co.uk/Attraction_Review-g187104-d314941-Reviews-Cathedrale_de_Saint_Malo-Saint_Malo_Ille_et_Vilaine_Brittany.html" target="_blank">Saint-Malo Cathedral</a></li>
-                    <li><a href="https://www.fortnational.com/en/" target="_blank">Fort National</a></li>
-                    <li><a href="https://www.brittanytourism.com/offers/grand-aquarium-de-saint-malo-saint-malo-en-2012871/" target="_blank">Grand Aquarium Saint Malo</a></li>
-                    <li><a href="https://www.expedia.com/Grand-Be-Brittany.d6109584.Vacation-Attraction" target="_blank">Grand Bé</a></li>
-                    <li><a href="https://www.saint-malo-tourisme.co.uk/explore/local-history/culture-and-heritage/heritage/fort-du-petit-be-1567439" target="_blank">Petit Bé</a></li>
-                    
-                </ul>
-                
-            </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
-            </div>iv>
+                <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                    <h2>Top 5 Tourist Locations</h2>
+                    <ul>
+                        <li><a onclick="maloCathedral()">Saint-Malo Cathedral</a></li>
+                        <li><a onclick="fortNational()">Fort National</a></li>
+                        <li><a onclick="grandAquarium()">Grand Aquarium Saint Malo</a></li>
+                        <li><a onclick="grandBe()">Grand Bé</a></li>
+                        <li><a onclick="petitBe()">Petit Bé</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-lg-6 location-s-map">
+                    <div id="mapid"></div>
+                </div>
             </div>
         </div>
-        </div>
-
-
+​
+​
     </section>
-    </article>
-    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
+</article>
+<script>
+​
+​
+    var mymap = L.map('mapid').setView([48.6493, -2.0257], 13);
+​
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+​
+    // L.circle([51.515126, -0.098491], 100, {
+    //     color: 'red',
+    //     fillColor: '#f03',
+    //     fillOpacity: 0.5
+    // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+​
+    var popup = L.popup();
+​
+​
+    function maloCathedral() {
+        L.marker([48.6495, -2.0257]).addTo(mymap)
+            .bindPopup("<a href='https://www.tripadvisor.co.uk/Attraction_Review-g187104-d314941-Reviews-Cathedrale_de_Saint_Malo-Saint_Malo_Ille_et_Vilaine_Brittany.html'>Saint-Malo Cathedral.</a>")
+            .openPopup();
+    }
+​
+    function fortNational() {
+        L.marker([48.6550, -2.0232]).addTo(mymap)
+            .bindPopup("<a href='https://www.fortnational.com/en/'>Fort National.</a>")
+            .openPopup();
+    }
 
-    </body>
-    <footer>
-        <ul class="network-links">
-            <li>
-                <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-                <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            </li>
-        </ul>
-    </footer>
-    </html>
+    function grandAquarium() {
+        L.marker([48.6195, -1.9945]).addTo(mymap)
+            .bindPopup("<a href='https://www.brittanytourism.com/offers/grand-aquarium-de-saint-malo-saint-malo-en-2012871/'>Grand Aquarium Saint Malo.</a>")
+            .openPopup();
+    }
+
+    function grandBe() {
+        L.marker([48.6522, -2.0331]).addTo(mymap)
+            .bindPopup("<a href='https://www.expedia.com/Grand-Be-Brittany.d6109584.Vacation-Attraction'>Grand Bé.</a>")
+            .openPopup();
+    }
+
+    function petitBe() {
+        L.marker([48.6386, -2.0186]).addTo(mymap)
+            .bindPopup("<a href='https://www.saint-malo-tourisme.co.uk/explore/local-history/culture-and-heritage/heritage/fort-du-petit-be-1567439'>Petit Bé.</a>")
+            .openPopup();
+    }
+​
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+​
+</body>
+<footer>
+    <ul class="network-links">
+        <li>
+            <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+            <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        </li>
+    </ul>
+</footer>
+</html>

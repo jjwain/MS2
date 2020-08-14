@@ -36,45 +36,99 @@
     <section>
         <div class="container map-info-container">
             <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.visitgarda.com/en/garda_lake/" target="_blank">Lake Garda</a></li>
-                    <li><a href="https://www.tripadvisor.co.uk/Attraction_Review-g187871-d246496-Reviews-Casa_di_Giulietta-Verona_Province_of_Verona_Veneto.html" target="_blank">Juliet's House</a></li>
-                    <li><a href="https://www.arena.it/arena/en" target="_blank">Verona Arena</a></li>
-                    <li><a href="https://www.chieseverona.it/en/our-churches/the-basilica-of-san-zeno" target="_blank">Basilica di San Zeno Maggiore</a></li>
-                    <li><a href="https://verona.com/en/verona/piazza-dei-signori/" target="_blank">Piazza dei Signori</a></li>
-                    
-                </ul>
-                
-            </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
+                <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                    <h2>Top 5 Tourist Locations</h2>
+                    <ul>
+                        <li><a onclick="lakeGarda()">Lake Garda</a></li>
+                        <li><a onclick="julietHouse()">Juliet's House</a></li>
+                        <li><a onclick="veronaArena()">Verona Arena</a></li>
+                        <li><a onclick="zenoMaggiore()">Basilica di San Zeno Maggiore</a></li>
+                        <li><a onclick="signori()">Piazza dei Signori</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-lg-6 location-s-map">
+                    <div id="mapid"></div>
+                </div>
             </div>
         </div>
-        </div>
-
-
+​
+​
     </section>
-    </article>
-    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
+</article>
+<script>
+​
+​
+    var mymap = L.map('mapid').setView([45.4384, 10.9916], 13);
+​
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+​
+    // L.circle([51.515126, -0.098491], 100, {
+    //     color: 'red',
+    //     fillColor: '#f03',
+    //     fillOpacity: 0.5
+    // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+​
+    var popup = L.popup();
+​
+​
+    function lakeGarda() {
+        L.marker([45.6049, 10.6351]).addTo(mymap)
+            .bindPopup("<a href='https://www.visitgarda.com/en/garda_lake/'>Lake Garda.</a>")
+            .openPopup();
+    }
+​
+    function julietHouse() {
+        L.marker([45.4419, 10.9984]).addTo(mymap)
+            .bindPopup("<a href='https://www.tripadvisor.co.uk/Attraction_Review-g187871-d246496-Reviews-Casa_di_Giulietta-Verona_Province_of_Verona_Veneto.html'>Juliet's House.</a>")
+            .openPopup();
+    }
 
-    </body>
-    <footer>
-        <ul class="network-links">
-            <li>
-                <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-                <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            </li>
-        </ul>
-    </footer>
-    </html>
+    function veronaArena() {
+        L.marker([45.4390, 10.9944]).addTo(mymap)
+            .bindPopup("<a href='https://www.arena.it/arena/en'>Verona Arena.</a>")
+            .openPopup();
+    }
+
+    function zenoMaggiore() {
+        L.marker([45.4426, 10.9793]).addTo(mymap)
+            .bindPopup("<a href='https://www.chieseverona.it/en/our-churches/the-basilica-of-san-zeno'>Basilica di San Zeno Maggiore.</a>")
+            .openPopup();
+    }
+
+    function signori() {
+        L.marker([45.4435, 10.9982]).addTo(mymap)
+            .bindPopup("<a href='https://verona.com/en/verona/piazza-dei-signori/'>Piazza dei Signori.</a>")
+            .openPopup();
+    }
+​
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+​
+</body>
+<footer>
+    <ul class="network-links">
+        <li>
+            <a href="https://www.youtube.co.uk" target="_blank"><i class="fab fa-youtube"></i></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.co.uk" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+            <a href="https://www.twitter.co.uk" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.co.uk" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        </li>
+    </ul>
+</footer>
+</html>

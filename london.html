@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +9,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
-    <link rel="stylesheet" href="assets/css/london.css">
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-          crossorigin=""></script>
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
     <title>European Travel Guide/London</title>
-    
+    <link rel="stylesheet" href="assets/css/london.css">
 ​
 </head>
 <body>
@@ -47,13 +47,11 @@
                 <div class="col-sm-12 col-lg-4 offset-1 location-info">
                     <h2>Top 5 Tourist Locations</h2>
                     <ul>
-                        <li><a id="lon-1" onclick="stpauls()">St. Paul's Cathedral</a></li>
-                        <li><a id="lon-2" onclick="tower()">Tower of London</a></li>
-                        <li><a href="https://www.britishmuseum.org/" target="_blank" id="lon-3">The British Museum</a>
-                        </li>
-                        <li><a href="https://www.londoneye.com/" target="_blank" id="lon-4">The London Eye</a></li>
-                        <li><a href="https://www.royal.uk/royal-residences-buckingham-palace" target="_blank"
-                               id="lon-5">Buckingham Palace</a></li>
+                        <li><a onclick="stpauls()">St. Paul's Cathedral</a></li>
+                        <li><a onclick="tower()">Tower of London</a></li>
+                        <li><a onclick="museum()">The British Museum</a></li>
+                        <li><a onclick="londonEye()">The London Eye</a></li>
+                        <li><a onclick="palace()">Buckingham Palace</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-lg-6 location-s-map">
@@ -91,13 +89,31 @@
 ​
     function stpauls() {
         L.marker([51.515126, -0.098491]).addTo(mymap)
-            .bindPopup("<a href='www.google.com'>St Paul's Cathedral.</a>")
+            .bindPopup("<a href='https://www.stpauls.co.uk/'>St Paul's Cathedral.</a>")
             .openPopup();
     }
 ​
     function tower() {
         L.marker([51.507921, -0.076239]).addTo(mymap)
-            .bindPopup("<a href='www.google.com'>Tower of London.</a>")
+            .bindPopup("<a href='https://www.viator.com/tours/London/Tower-of-London-Entrance-Ticket-Including-Crown-Jewels-and-Beefeater-Tour/d737-3251TOW'>Tower of London.</a>")
+            .openPopup();
+    }
+
+    function museum() {
+        L.marker([51.5194, -0.1270]).addTo(mymap)
+            .bindPopup("<a href='https://www.britishmuseum.org/'>The British Museum.</a>")
+            .openPopup();
+    }
+
+    function londonEye() {
+        L.marker([51.5033, -0.1195]).addTo(mymap)
+            .bindPopup("<a href='https://www.londoneye.com/'>The London Eye.</a>")
+            .openPopup();
+    }
+
+    function palace() {
+        L.marker([51.5014, -0.1419]).addTo(mymap)
+            .bindPopup("<a href='https://www.royal.uk/royal-residences-buckingham-palace'>Buckingham Palace.</a>")
             .openPopup();
     }
 ​
@@ -123,3 +139,4 @@
         </li>
     </ul>
 </footer>
+</html>

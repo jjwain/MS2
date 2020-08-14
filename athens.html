@@ -24,44 +24,96 @@
 
 
      <!-- front image and title  -->
-    <article class="container-fluid" id="header-container"> 
+     <article class="container-fluid" id="header-container">
         <section id="img-container">
             <div id="front-image">
                 <div id="image-text">
                     <h1 class="lead">Athens</h1>
                 </div>
             </div>
-            </section>
+        </section>
+    ​
+        <section>
+            <div class="container map-info-container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-4 offset-1 location-info">
+                        <h2>Top 5 Tourist Locations</h2>
+                        <ul>
+                            <li><a id="lon-1" onclick="acropolis()">Acropolis of Athens</a></li>
+                            <li><a id="lon-2" onclick="parthenon()">Parthenon</a></li>
+                            <li><a id="lon-3" onclick="syntagma()">Syntagma Square</a></li>
+                            <li><a id="lon-4" onclick="olymbianZeus()">Temple of Olympian Zeus</a></li>
+                            <li><a id="lon-5" onclick="monastiraki()">Monastiraki</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 location-s-map">
+                        <div id="mapid"></div>
+                    </div>
+                </div>
+            </div>
+    ​
+    ​
+        </section>
     </article>
+    <script>
+    ​
+    ​
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    ​
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);
+    ​
+        // L.circle([51.515126, -0.098491], 100, {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5
+        // }).addTo(mymap).bindPopup("St Paul's Cathedral.");
+    ​
+        var popup = L.popup();
+    ​
+    ​
+        function acropolis() {
+            L.marker([37.9715, 23.7257]).addTo(mymap)
+                .bindPopup("<a href='https://www.keytours.gr/en/athens/athens_city_tour_acropolis_museum_skip_the_line-19.html?utm_source=google&utm_medium=cpc&utm_content=SearchGeneric&gclid=Cj0KCQjwvIT5BRCqARIsAAwwD-QPrR9XL1ESe5eR0xF87KUFh6eDVSJxq0xIROEyKaihY-x8NdpnaaIaAkUKEALw_wcB'>Acropolis of Athens.</a>")
+                .openPopup();
+        }
+    ​
+        function parthenon() {
+            L.marker([37.9715, 23.7267]).addTo(mymap)
+                .bindPopup("<a href='https://www.ancient.eu/parthenon/'>Parthenon.</a>")
+                .openPopup();
+        }
     
-    <article>
-    <section>
-        <div class="container map-info-container">
-            <div class="row">
-            <div class="col-sm-12 col-lg-4 offset-1 location-info">
-                <h2>Top 5 Tourist Locations</h2>
-                <ul>
-                    <li><a href="https://www.keytours.gr/en/athens/athens_city_tour_acropolis_museum_skip_the_line-19.html?utm_source=google&utm_medium=cpc&utm_content=SearchGeneric&gclid=Cj0KCQjwvIT5BRCqARIsAAwwD-QPrR9XL1ESe5eR0xF87KUFh6eDVSJxq0xIROEyKaihY-x8NdpnaaIaAkUKEALw_wcB" target="_blank">Acropolis of Athens</a></li>
-                    <li><a href="https://www.rome.net/pantheon" target="_blank">Parthenon</a></li>
-                    <li><a href="https://www.getyourguide.com/discovery/-l3772/?cmp=ga&campaign_id=6564905455&adgroup_id=87123220308&target_id=aud-476515433651%3Akwd-190452269773&loc_physical_ms=1006663&match_type=e&ad_id=386487112469&keyword=temple%20of%20olympian%20zeus%20tickets&ad_position=&feed_item_id=&placement=&device=c&partner_id=CD951&gclid=Cj0KCQjwvIT5BRCqARIsAAwwD-RNTTtpO9Kr9BNoNlNPKpJ4IwB32MTYaN6ZhmTINtkN-VcKNljGaj8aAvNNEALw_wcB&utm_force=0" target="_blank">Temple of Olympian Zeus</a></li>
-                    <li><a href="https://www.athensguide.com/syntagma.html" target="_blank">Syntagma Square</a></li>
-                    <li><a href="https://www.athensguide.com/monastiraki.html" target="_blank">Monastiraki</a></li>
-                    
-                </ul>
-                
-            </div>
-            <div class="col-sm-12 col-lg-6 location-s-map">
-                <div id="map"></div> 
-            </div>
-        </div>
-        </div>
-
-
-    </section>
-    </article>
+        function syntagma() {
+            L.marker([37.9755, 23.7349]).addTo(mymap)
+                .bindPopup("<a href='https://www.athensguide.com/syntagma.html'>Syntagma Square.</a>")
+                .openPopup();
+        }
+    
+        function olymbianZeus() {
+            L.marker([37.9693, 23.7331]).addTo(mymap)
+                .bindPopup("<a href='https://www.getyourguide.com/discovery/-l3772/?cmp=ga&campaign_id=6564905455&adgroup_id=87123220308&target_id=aud-476515433651%3Akwd-190452269773&loc_physical_ms=1006663&match_type=e&ad_id=386487112469&keyword=temple%20of%20olympian%20zeus%20tickets&ad_position=&feed_item_id=&placement=&device=c&partner_id=CD951&gclid=Cj0KCQjwvIT5BRCqARIsAAwwD-RNTTtpO9Kr9BNoNlNPKpJ4IwB32MTYaN6ZhmTINtkN-VcKNljGaj8aAvNNEALw_wcB&utm_force=0'>Temple of Olympian Zeus.</a>")
+                .openPopup();
+        }
+    
+        function monastiraki() {
+            L.marker([37.9758, 23.7268]).addTo(mymap)
+                .bindPopup("<a href='https://www.athensguide.com/monastiraki.html'>Monastiraki.</a>")
+                .openPopup();
+        }
+    ​
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhs_b4km_Sw6wtcgsOnk7HpW625ZMwIA&callback=initMap"></script>
-
+    ​
     </body>
     <footer>
         <ul class="network-links">
