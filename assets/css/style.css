@@ -1,238 +1,166 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Raleway:wght@300&display=swap');
-
 *{
     margin:0;
     padding:0;
     border: 0;
+    font-size: 10px;
     font-family: "raleway";
 }
-
 #menu {
     position: absolute;
     z-index: 1;
     list-style-type: none;
-    height: 70px;
+    height: 7rem;
     width:100%;
     background-color: rgba(0,0,0,0.05);
-    line-height: 75px;
+    line-height: 7.5rem;
 }
-
 /* Navbar styling */
-
 #menu ul {
     width: 100%;
 }
-
 .menu-li {
     display: inline;
     width: 50%;
     text-align: center;
     float: left;
 }
-
 .menu-li a {
     text-decoration: none;
     font-family: "raleway";
     font-weight: bold;
 }
-
 .menu-li a:hover {
     border-bottom: solid 3px;
 }
-
 /* Heading Styling */
-
 #header-container {
     padding: 0;
 }
-
 #img-container {
     width: 100%;
-    height:900px;
+    height:90rem;
     margin: auto;
     padding: 0;
     position: relative;
 }
-
 #front-image {
-    height: 800px;
+    height: 80rem;
     width: 100%;
     background: linear-gradient(to bottom, transparent, white),
       url(/assets/img/Europe-Background.jpg);
     overflow: hidden;
 }
-
 #image-text {
-    top: 200px;
+    top: 20rem;
     font-family: "Montserrat Subrayada";
-    width: 500px;
-    height: 400px;
+    width: 50rem;
+    height: 40rem;
     justify-content: center;
 }
-
 #image-text h1 {
     text-align: center;
-    top: 200px;
+    top: 20rem;
     width: 100%;
     position: absolute;
     margin: auto;
-    font-size: 60px;
-    color: rgba(0,51,102, 0.9);
+    font-size: 6rem;
+    color: rgba(0,51,102, .9);
 }
-
-
 /* Travel destination styling  */
-
 #location-section {
-    height: 800px;
-    margin-bottom: 500px;
+    height: 80rem;
+    margin-bottom: 50rem;
 }
-
 #section-header {
-    width: 100;
+    width: 100%;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     color: rgba(0,51,102, 1);
     font-family: "Montserrat Subrayada";
 }
-
 .location-row {
-    margin-top: 50px;
+    margin-top: 5rem;
 }
-
-
 .location-header {
     text-align: center;
     font-family: "Montserrat Subrayada";
     text-decoration: none;
     color: rgba(0,51,102, .8);
 }
-
 .location-header h2 {
     margin-bottom: 0;
 }
-
 .location {
-    height: 175px;
+    height: 17.5rem;
     width: 100%;
     margin-top: 2px;
     border: 2px solid rgba(0,51,102,1);
-    border-radius: 8px;
+    border-radius: .8rem;
 }
-
-
-
             /* Map locations */
-
 .map-header {
     font-family: "Montserrat Subrayada";
     text-align: center;
-    margin-top: 40px;
-    color: rgba(0,51,102, 0.9);
+    margin-top: 4rem;
+    color: rgba(0,51,102, .9);
 }
-
 .map-sub-header {
     font-family: "raleway";
     text-align: center;
     color: rgba(0,51,102,1);
     font-weight: bold;
 }
-
-
-#map {
-    margin-top: 50px;
-    margin-bottom: 100px;
+#mapid {
     border: 3px solid rgba(0,51,102,1);
     border-radius: 10px;
     height: 500px;
     width: 80%;
     margin: auto;
 }            
-
-
-
 footer {
-    height: 135px;
+    height: 13.5rem;
 }
-
 .network-links {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 5rem;
 }
-
 .network-links li {
     display: inline;
-    font-size: 50px;
-    padding: 10px;
+    font-size: 5rem;
+    padding: 1rem;
     color: rgba(0,51,102,1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
              /* Image links */
-
-
 .london {
-    background-image: url(/assets/img/london.jpg);
+    background-image: url(../img/london.jpg);
     background-position: center center;
 }
-
 .edinburgh {
-    background-image: url(/assets/img/edinburgh.jpg);
+    background-image: url(../img/edinburgh.jpg);
     background-position: 50% 30%;
 }
-
 .saint-malo {
-    background-image: url(/assets/img/saint-malo.jpg);
+    background-image: url(../img/saint-malo.jpg);
     background-position: 20% 15%;
 }
-
 .rome {
-    background-image: url(/assets/img/rome.jpg);
+    background-image: url(../img/rome.jpg);
     background-position:50% 50% ;
 }
-
 .verona {
-    background-image: url(/assets/img/verona.jpg);
+    background-image: url(../img/verona.jpg);
     background-position:50% 50% ;
 }
-
 .athens {
-    background-image: url(/assets/img/athens.jpg);
+    background-image: url(../img/athens.jpg);
     background-position:50% 50% ;
 }
-
 .rovinj {
-    background-image: url(/assets/img/rovinj.jpg);
+    background-image: url(../img/rovinj.jpg);
     background-position:50% 50% ;
 }
-
 .prague {
-    background-image: url(/assets/img/prague.jpg);
+    background-image: url(../img/prague.jpg);
     background-position:50% 50% ;
 }
